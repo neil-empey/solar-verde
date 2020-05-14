@@ -19,9 +19,8 @@ class Save
   end
 
   def self.search_by_location(place)
-    p self.all
+    return nil if self.all.empty?
    self.all.each_with_index do |ele, i|
-      p ele[0]
       if ele[0][0] == place[0] && ele[0][1] == place[1]
         return ele[1]
       else

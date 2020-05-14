@@ -98,7 +98,7 @@ def choices
   end
 
 def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
-  if choice_code == nil && location == nil
+  if outputs != nil
     puts ""
     puts "            Here is the predicted annual kWhac (kiloWattHours AC) for your system"
     puts ""
@@ -112,7 +112,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
     puts "                                  .  .....  ."
     puts "                                  ..........."
     puts ""
-    puts "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    puts "                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     puts ""
     puts ""
     puts "                          send feedback to : argus.two.2@gmail.com"
@@ -125,6 +125,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
     puts ""
     puts ""
     puts ""
+    exit(true)
     SolarVerde::CLI.new.initialize
   end
   if choice_code == "1"
@@ -142,7 +143,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts "                                  .  .....  ."
    puts "                                  ..........."
    puts ""
-   puts "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+   puts "                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
    puts ""
    puts ""
    puts "                          send feedback to : argus.two.2@gmail.com"
@@ -155,6 +156,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts ""
    puts ""
    puts ""
+   exit(true) #comment out to save in memory
    SolarVerde::CLI.new.initialize
  elsif choice_code == "2"
    puts ""
@@ -173,8 +175,6 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    losses = loss()
 
    outputs = AdvancedGather.complex(location, system_capacity, azimuth, tilt, array_type, module_type, losses)
-   Save.new(location, outputs)
-
    puts ""
    puts "                      Here is the predicted annual kWhac (kiloWattHours AC) for your system"
    puts ""
@@ -187,7 +187,9 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts ""
    puts ""
    puts ""
+   # exit(true) #comment out to save.
    exit(true)
+   SolarVerde::CLI.new.initialize
  end
 end
 

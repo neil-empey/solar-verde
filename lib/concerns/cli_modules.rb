@@ -26,7 +26,7 @@ module ConfirmAddress
           if found_record == nil
               advanced_prediction(check2, choice, nil)
             else
-            advanced_prediction(check2, choice, nil)
+            advanced_prediction(nil, nil, found_record)
       end
       when "n"
         puts ""
