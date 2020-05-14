@@ -16,7 +16,7 @@ class Save
   def self.all
     @@all
   end
-
+  #checking to see if any lat/long exists in the @@all
   def self.search_by_location(place)
     return nil if self.all.empty?
    self.all.each_with_index do |ele, i|

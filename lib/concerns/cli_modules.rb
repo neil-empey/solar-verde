@@ -6,6 +6,7 @@ module ConfirmAddress
     puts ""
     puts ""
     puts ""
+    #we turn mailing address into lat/long then reverse the process to get a mailing address and confirm that this is their address. Helps in location precision.
     process1 = SolarVerde::Gather.new(@pos_address_string)
     check = process1.confirm_address[0] #normal mailing address
     check2 = process1.confirm_address[1]#lat long
@@ -39,7 +40,7 @@ module ConfirmAddress
         choices()
       end
     end
-
+    #help menu for option 2 main menu
     def help
       puts "   The average system capacity in the U.S is 4kW or 4000W"
       puts ""

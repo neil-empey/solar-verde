@@ -14,7 +14,7 @@ class SolarVerde::Gather
     @long = nil
     zip_to_latlong(address_string)
   end
-
+  #zip to lat long (not a good name since any form of address or location is acceptbale)
   def zip_to_latlong(address)
     geocoder = OpenCage::Geocoder.new(api_key: '464d424f001944f28f7633d199bada6b')
     results = geocoder.geocode(address)
@@ -22,6 +22,7 @@ class SolarVerde::Gather
     address_lat_long = results.first.coordinates
     @lat = address_lat_long[0]
     @long = address_lat_long[1]
+    #create instances of lat/long for use below
   end
 
   def confirm_address

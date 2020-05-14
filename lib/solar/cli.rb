@@ -75,6 +75,7 @@ def choices
       puts ""
       exit(true)
     else
+      #in case user types a value not recognized
       puts ""
       puts "                      ---------------------------------"
       puts "                      Invalid choice, please try again."
@@ -84,7 +85,7 @@ def choices
       choices()
     end
   end
-
+#could have used *args below
 def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
   if outputs != nil
     puts ""
@@ -117,8 +118,8 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
     puts ""
     puts ""
     puts ""
-    exit(true)
-    SolarVerde::CLI.new.initialize
+    exit(true) #comment out to save in memory
+    SolarVerde::CLI.new.initialize #restarts program if above commented out
   end
   if choice_code == "1"
    outputs = AdvancedGather.simple(location)
@@ -153,7 +154,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts ""
    puts ""
    exit(true) #comment out to save in memory
-   SolarVerde::CLI.new.initialize
+   SolarVerde::CLI.new.initialize #restart intialize if exit was commented out
  elsif choice_code == "2"
    puts ""
    puts "            Please answer the following questions to the best of your ability."
@@ -163,6 +164,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts "                   ::::::::::::::::::::::::::::::::::::::::::::::::::"
    puts ""
    puts ""
+   #call methods for question variables
    system_capacity = capacity()
    azimuth = direction()
    tilt = til()
