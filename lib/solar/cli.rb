@@ -14,10 +14,6 @@ def initialize
   call
 end
 
-# def pos_zip_string
-#   @pos_address_string
-# end
-
 def call
   puts ""
   puts ""
@@ -48,14 +44,6 @@ def get_location
 
   input = gets.strip
   @pos_address_string = input
-   # found_record = Save.search_by_location(@pos_address_string)
-   # puts "#{found_record}"
-  #   if found_record != nil
-  #     puts "record found"
-  #     advanced_prediction(nil, nil, found_record)
-  #   else
-  #   @pos_address_string
-  # end
   @pos_address_string
 end
 

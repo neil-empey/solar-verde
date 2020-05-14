@@ -7,8 +7,8 @@ module ConfirmAddress
     puts ""
     puts ""
     process1 = SolarVerde::Gather.new(@pos_address_string)
-    check = process1.confirm_address[0]
-    check2 = process1.confirm_address[1]
+    check = process1.confirm_address[0] #normal mailing address
+    check2 = process1.confirm_address[1]#lat long
     check.address
     puts  "        Confirm the address : --->  #{check.address}"
     puts "        -------------------"
@@ -22,6 +22,7 @@ module ConfirmAddress
       case confirmation
       when "y"
         puts ""
+        #searching to see if lat/long in Save @@all
         found_record = Save.search_by_location(check2)
           if found_record == nil
               advanced_prediction(check2, choice, nil)
