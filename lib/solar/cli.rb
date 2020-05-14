@@ -151,10 +151,10 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    sleep(1)
    puts "                                  ..........."
    puts ""
-   puts "                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+   puts "                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
    puts ""
    puts ""
-   puts "                          send feedback to : argus.two.2@gmail.com"
+   puts "                       send feedback to : argus.two.2@gmail.com"
    puts ""
    puts ""
    puts ""
@@ -171,7 +171,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts "            Please answer the following questions to the best of your ability."
    puts "            ------------------------------------------------------------------"
    puts ""
-   puts "          The units will be described in the question. Numbers Only, 'h' for help. "
+   puts "          The units will be described in the question. NUMBERS ONLY, 'h' for help. "
    puts "                   ::::::::::::::::::::::::::::::::::::::::::::::::::"
    puts ""
    puts ""
@@ -184,7 +184,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
 
    outputs = AdvancedGather.complex(location, system_capacity, azimuth, tilt, array_type, module_type, losses)
    puts ""
-   puts "                      Here is the predicted annual kWhac (kiloWattHours AC) for your system"
+   puts "                     Here is the predicted annual kWhac (kiloWattHours AC) for your system"
    puts ""
    puts "                                 #{outputs} kWhac"
    puts "                                   ---------------"
@@ -202,7 +202,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
 end
 
  def capacity
-   puts "            Please enter your system capacity in kW"
+   puts "               Please enter your system capacity in kW"
    puts ""
    puts ""
    s_capacity = gets.strip.downcase
@@ -214,7 +214,7 @@ end
  end
 
  def direction
-   puts "            Please enter the direction your array points towards"
+   puts "               Please enter the direction your array points towards"
    puts ""
    puts ""
    points_to = gets.strip.downcase
@@ -226,7 +226,7 @@ end
 
  def til
    puts ""
-   puts "            Please enter the angle from the horizontal the array is positioned "
+   puts "               Please enter the angle from the horizontal the array is positioned "
    puts ""
    puts ""
    s_tilt = gets.strip.downcase
@@ -238,7 +238,7 @@ end
 
  def type_arr
    puts ""
-   puts "            Please enter your array-type, see help for more info"
+   puts "               Please enter your array-type, see help for more info"
    puts ""
    puts ""
    arr = gets.strip.downcase
@@ -250,7 +250,7 @@ end
 
  def type_mod
    puts ""
-   puts "            Please enter your module type. (0)Standard, (1)Premium or (2)Thin Film"
+   puts "               Please enter your module type. (0)Standard, (1)Premium or (2)Thin Film"
    puts ""
    puts ""
    m_type = gets.strip.downcase
@@ -262,7 +262,7 @@ end
 
  def loss
    puts ""
-   puts "            Please enter your system losses"
+   puts "                 Please enter your system losses"
    puts ""
    puts ""
    los = gets.strip.downcase
@@ -281,7 +281,13 @@ end
    puts "                                  ..........."
 
    puts ""
-   puts "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+   puts "                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+   puts ""
+   puts ""
+   puts ""
+   puts ""
+   puts ""
+   puts ""
    puts ""
    puts ""
    puts ""
