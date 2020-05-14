@@ -10,8 +10,8 @@ module ConfirmAddress
     check = process1.confirm_address[0]
     check2 = process1.confirm_address[1]
     check.address
-    puts "                Confirm the address is correct : --->  #{check.address}"
-    puts "                --------------------------------"
+    puts  "        Confirm the address : --->  #{check.address}"
+    puts "        -------------------"
     puts ""
     puts "                        Please enter (Y) or (N)"
     puts ""
