@@ -1,5 +1,4 @@
-require_relative './cli.rb'
-
+# require_relative './cli.rb'
 
 class Save
 
@@ -10,7 +9,7 @@ class Save
   def initialize(location, output)
     @location = location
     @output = output
-    @@all << [@location, @output]
+    @@all << [@location, @output] #could have used self
   end
 
   def self.all

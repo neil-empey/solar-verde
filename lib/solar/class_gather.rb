@@ -1,4 +1,4 @@
-require_relative './cli.rb'
+# require_relative './cli.rb'
 require 'pry'
 require 'opencage/geocoder'
 #NREL api_key kPvYh2OjCIVqR4y0VLpZDKuJB1cM9u8CfdmbeeTk

@@ -1,7 +1,6 @@
 
-require_relative './class_gather.rb'
 require_relative '../concerns/cli_modules.rb'
-require_relative './class_save.rb'
+
 require 'pry'
 
 class SolarVerde::CLI
@@ -39,12 +38,14 @@ def get_location
   puts "                  ----------------------------------------------"
   puts ""
   puts ""
+  puts "                              ENTER ""'3'"" to EXIT"
   puts ""
   puts ""
 
   input = gets.strip
-  @pos_address_string = input
-  @pos_address_string
+    @pos_address_string = input
+    exit(true) if input == '3'
+    @pos_address_string
 end
 
 def choices
@@ -108,7 +109,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
     puts "                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     puts ""
     puts ""
-    puts "                          send feedback to : argus.two.2@gmail.com"
+    puts "                         send feedback to : argus.two.2@gmail.com"
     puts ""
     puts ""
     puts ""
@@ -143,7 +144,7 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts "                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
    puts ""
    puts ""
-   puts "                       send feedback to : argus.two.2@gmail.com"
+   puts "                      send feedback to : argus.two.2@gmail.com"
    puts ""
    puts ""
    puts ""
@@ -153,8 +154,8 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts ""
    puts ""
    puts ""
-   exit(true) #comment out to save in memory
-   SolarVerde::CLI.new.initialize #restart intialize if exit was commented out
+   #exit(true) #comment out to save in memory
+   SolarVerde::CLI.new #restart intialize if exit was commented out
  elsif choice_code == "2"
    puts ""
    puts "            Please answer the following questions to the best of your ability."
@@ -180,14 +181,14 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts "                                   ---------------"
    puts ""
    puts ""
-   puts "                     send feedback to : argus.two.2@gmail.com"
+   puts "                    send feedback to : argus.two.2@gmail.com"
    puts ""
    puts ""
    puts ""
    puts ""
    # exit(true) #comment out to save.
-   exit(true)
-   SolarVerde::CLI.new.initialize
+   #exit(true)
+   SolarVerde::CLI.new
  end
 end
 
@@ -281,6 +282,6 @@ end
    puts ""
    puts ""
    puts ""
-   los
+   los # returning losses for the system (user defined)
  end
 end
