@@ -107,12 +107,16 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
     puts ""
     puts ""
     puts "                                  ..........."
+    sleep(1)
     puts "                                  .  .   .  ."
+    sleep(1)
     puts "                                  .    .    ."
+    sleep(1)
     puts "                                  .  .....  ."
+    sleep(1)
     puts "                                  ..........."
     puts ""
-    puts "                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    puts "                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     puts ""
     puts ""
     puts "                          send feedback to : argus.two.2@gmail.com"
@@ -138,9 +142,13 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    puts ""
    puts ""
    puts "                                  ..........."
+   sleep(1)
    puts "                                  .  .   .  ."
+   sleep(1)
    puts "                                  .    .    ."
+   sleep(1)
    puts "                                  .  .....  ."
+   sleep(1)
    puts "                                  ..........."
    puts ""
    puts "                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
@@ -263,10 +271,15 @@ end
    end
    puts "                 One moment please while we process your request"
    puts "                                  ..........."
+   sleep(1)
    puts "                                  .  .   .  ."
+   sleep(1)
    puts "                                  .    .    ."
+   sleep(1)
    puts "                                  .  .....  ."
+   sleep(1)
    puts "                                  ..........."
+
    puts ""
    puts "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
    puts ""

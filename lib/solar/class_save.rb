@@ -11,7 +11,6 @@ class Save
     @location = location
     @output = output
     @@all << [@location, @output]
-    puts "saved"
   end
 
   def self.all
