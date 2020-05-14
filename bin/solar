@@ -4,5 +4,6 @@ require "bundler/setup"
 require './lib/solar/cli.rb'
 require './lib/solar/class_gather.rb'
 require './lib/solar/advanced_gather.rb'
+require './lib/solar/class_save.rb'
 
 SolarVerde::CLI.new.initialize

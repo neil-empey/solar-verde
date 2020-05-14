@@ -7,12 +7,6 @@ class AdvancedGather
 
   attr_accessor :location, :choice_code, :locate
 
-  @@all = []
-
-  def self.all
-    @@all
-  end
-
   def self.grab(locate, system_capacity=4, azimuth=180, tilt=30.26, array_type=1, module_type=0, losses=14)
   #SEE NOTES BELOW ON DEFAULTED VALUES
       response = HTTParty.get("https://developer.nrel.gov/api/pvwatts/v6.json?api_key=kPvYh2OjCIVqR4y0VLpZDKuJB1cM9u8CfdmbeeTk&lat=#{locate[0]}&lon=#{locate[1]}&system_capacity=#{system_capacity}&azimuth=#{azimuth}&tilt=#{tilt}&array_type=#{array_type}&module_type=#{module_type}&losses=#{losses}")
@@ -21,14 +15,14 @@ class AdvancedGather
   def self.simple(locate)
     @locate = locate
     result = grab(locate)
-    @@all << result
+    Save.new(locate, result["outputs"]["ac_annual"])
     return result["outputs"]["ac_annual"]
   end
 
   def self.complex(locate, system_capacity, azimuth, tilt, array_type, module_type, losses)
     @locate = locate
     result = grab(locate, system_capacity=4, azimuth=180, tilt=30.26, array_type=1, module_type=0, losses=14)
-    @@all << result
+      Save.new(locate, result["outputs"]["ac_annual"])
     return result["outputs"]["ac_annual"]
   end
 end

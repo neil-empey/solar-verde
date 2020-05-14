@@ -22,7 +22,12 @@ module ConfirmAddress
       case confirmation
       when "y"
         puts ""
-        advanced_prediction(check2, choice)
+        found_record = Save.search_by_location(check2)
+          if found_record == nil
+              advanced_prediction(check2, choice, nil)
+            else
+            advanced_prediction(check2, choice, nil)
+      end
       when "n"
         puts ""
         puts "                               ---------------------"

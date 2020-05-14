@@ -1,6 +1,7 @@
 
 require_relative './class_gather.rb'
 require_relative '../concerns/cli_modules.rb'
+require_relative './class_save.rb'
 require 'pry'
 
 class SolarVerde::CLI
@@ -13,9 +14,9 @@ def initialize
   call
 end
 
-def pos_zip_string
-  @pos_address_string
-end
+# def pos_zip_string
+#   @pos_address_string
+# end
 
 def call
   puts ""
@@ -47,6 +48,15 @@ def get_location
 
   input = gets.strip
   @pos_address_string = input
+   # found_record = Save.search_by_location(@pos_address_string)
+   # puts "#{found_record}"
+  #   if found_record != nil
+  #     puts "record found"
+  #     advanced_prediction(nil, nil, found_record)
+  #   else
+  #   @pos_address_string
+  # end
+  @pos_address_string
 end
 
 def choices
@@ -87,7 +97,36 @@ def choices
     end
   end
 
-def advanced_prediction(location, choice_code)
+def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
+  if choice_code == nil && location == nil
+    puts ""
+    puts "            Here is the predicted annual kWhac (kiloWattHours AC) for your system"
+    puts ""
+    puts "                              #{outputs} kWhac"
+    puts "                                 ---------------"
+    puts ""
+    puts ""
+    puts "                                  ..........."
+    puts "                                  .  .   .  ."
+    puts "                                  .    .    ."
+    puts "                                  .  .....  ."
+    puts "                                  ..........."
+    puts ""
+    puts "                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    puts ""
+    puts ""
+    puts "                          send feedback to : argus.two.2@gmail.com"
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    puts ""
+    SolarVerde::CLI.new.initialize
+  end
   if choice_code == "1"
    outputs = AdvancedGather.simple(location)
    puts ""
@@ -116,7 +155,7 @@ def advanced_prediction(location, choice_code)
    puts ""
    puts ""
    puts ""
-   exit(true)
+   SolarVerde::CLI.new.initialize
  elsif choice_code == "2"
    puts ""
    puts "            Please answer the following questions to the best of your ability."
@@ -134,7 +173,7 @@ def advanced_prediction(location, choice_code)
    losses = loss()
 
    outputs = AdvancedGather.complex(location, system_capacity, azimuth, tilt, array_type, module_type, losses)
-   # outputs
+   Save.new(location, outputs)
 
    puts ""
    puts "                      Here is the predicted annual kWhac (kiloWattHours AC) for your system"

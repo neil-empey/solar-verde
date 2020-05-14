@@ -8,11 +8,8 @@ class SolarVerde::Gather
 
   attr_accessor :address_string, :address_lat_long
 
-  @@address = []
-
   def initialize(address_string)
     @address_string = address_string
-    @@address << self
     @lat = nil
     @long = nil
     zip_to_latlong(address_string)
@@ -25,10 +22,6 @@ class SolarVerde::Gather
     address_lat_long = results.first.coordinates
     @lat = address_lat_long[0]
     @long = address_lat_long[1]
-  end
-
-  def self.address
-    @@address
   end
 
   def confirm_address
