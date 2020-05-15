@@ -72,6 +72,5 @@ module ConfirmAddress
       puts "www.nrel.gov/publications."
       puts ""
       puts ""
-
     end
   end

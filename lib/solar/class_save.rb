@@ -1,4 +1,4 @@
-
+require 'pry'
 class Save
 
   attr_accessor :location, :output
@@ -9,6 +9,14 @@ class Save
     @location = location
     @output = output
     @@all << [@location, @output] #could have used self
+  end
+
+  def self.top_ish #top_five sorts by kWhac smallest first
+    return 0 if self.all.empty?
+    top_five = self.all.sort_by {|ele| ele[1]}
+    (0...self.all.length).each do |i|
+      puts "#{i + 1}.  #{SolarVerde::Gather.get_confirm(top_five.reverse[i][0]).address}"
+    end
   end
 
   def self.all

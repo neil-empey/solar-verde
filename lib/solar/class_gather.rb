@@ -1,4 +1,4 @@
-# require_relative './cli.rb'
+
 require 'pry'
 require 'opencage/geocoder'
 #NREL api_key kPvYh2OjCIVqR4y0VLpZDKuJB1cM9u8CfdmbeeTk
@@ -34,5 +34,9 @@ class SolarVerde::Gather
     confirm_array
   end
 
-
+  def self.get_confirm(lat_long_array)
+    geocoder = OpenCage::Geocoder.new(api_key: '464d424f001944f28f7633d199bada6b')
+    confirm = geocoder.reverse_geocode(lat_long_array[0], lat_long_array[1])
+    confirm
+  end
 end

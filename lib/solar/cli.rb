@@ -61,6 +61,7 @@ def choices
   puts ""
   puts "              3. Exit"
   puts ""
+  puts "              4. Top Producer Areas"
 
   response = nil
     response = gets.strip
@@ -75,6 +76,8 @@ def choices
       puts ""
       puts ""
       exit(true)
+    elsif response == "4"
+        Save.top_ish
     else
       #in case user types a value not recognized
       puts ""
@@ -191,6 +194,8 @@ def advanced_prediction(location=nil, choice_code=nil, outputs=nil)
    SolarVerde::CLI.new
  end
 end
+
+
 
  def capacity
    puts "               Please enter your system capacity in kW"
